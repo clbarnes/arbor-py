@@ -76,7 +76,7 @@ class Arbor(SpacedTree):
         )  # type: ignore
 
     def _get_single_tagged_node(self, tag: str, must_exist=False):
-        nodes = self.tags[self.SOMA]
+        nodes = self.tags.get(tag, [])
         if len(nodes) == 1:
             return nodes[0]
         elif len(nodes) > 1:
